@@ -13,7 +13,7 @@ a:hover {
   background-color: #fff;
   height: 100%;
   border-radius: 20px;
-  padding: 25px 15px;
+  padding: 10px 15px;
   box-shadow: 0 0 10px black;
   text-align: center;
 }
@@ -56,7 +56,7 @@ a:hover {
 .sidebar__contact {
   background-color: #dbdddf;
   padding: 2px 0;
-  margin: 20px -15px;
+  margin: 20px -5px;
 }
 
 .sidebar__email {
@@ -64,9 +64,9 @@ a:hover {
 
   border-radius: 30px;
   color: #fff;
-  margin: 15px 25px 0px;
+  margin: 10px 25px 0px;
   cursor: pointer;
-  transition: all 3s linear;
+  transition: all 2s linear;
 }
 
 .sidebar__email:hover {
