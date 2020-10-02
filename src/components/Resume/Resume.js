@@ -1,73 +1,35 @@
 import React from 'react'
 import "./Resume.css"
-import react from "../../assets/icons/react.svg"
+
 import Bar from "../Bar/Bar"
-const languages=[
-    {
-        icon:react,
-        name:"HTML",
-        level:"90"
-    },
-    {
-        icon:react,
-        name:"React Js",
-        level:"90"
-    },
-    {
-        icon:react,
-        name:"Formik",
-        level:"80"
-    },
-    {
-        icon:react,
-        name:"Redux",
-        level:"80"
-    },
-   
-    {
-        icon:react,
-        name:"Axios",
-        level:"80"
-    },
-    {
-        icon:react,
-        name:"Hook",
-        level:"75"
-    },
-   
-
-]
-
-const styling=[
-    {
-        icon:react,
-        name:"CSS",
-        level:"90"
-    },
-    {
-        icon:react,
-        name:"Bootstrap",
-        level:"85"
-    },
-    {
-        icon:react,
-        name:"Material-Ui",
-        level:"60"
-    },
-    {
-        icon:react,
-        name:"Git",
-        level:"70"
-    },
-    {
-        icon:react,
-        name:"NPM",
-        level:"70"
-    },
-]
+import {motion} from "framer-motion"
+import {languages,styling} from "../data/resume_data"
 const Resume = () => {
+
+    const resume_variant={
+        hidden:{
+          opacity:0
+        },
+        visible:{
+          opacity:1,
+          transition:{
+            delay:0.2,duration:0.6,
+        }
+        },
+        exit:{
+            opacity:0,
+            transition:{
+                ease:"easeInOut"
+            }
+        }
+      }
     return (
-       <div className="container resume">
+       <motion.div className="container resume"
+       variants={resume_variant}
+       initial="hidden"
+       animate="visible"
+       exit="exit"
+       >
            <div className="row">
                <div className="col-lg-6 resume-card">
                 <h4 className="resume-card__heading">Education</h4>
@@ -118,7 +80,7 @@ const Resume = () => {
                    </div>
                </div>
            </div>
-       </div>
+       </motion.div>
     )
 }
 

@@ -1,34 +1,73 @@
 import React, { useState } from 'react';
 import data_projects from '../data/projects_data'
 import ProjectCard from '../ProjectCard/ProjectCard';
+import { motion } from 'framer-motion'
 import "./Projects.css"
-
 const Projects = () => {
     const [projects, setProjects] = useState(data_projects)
+    const [active, setActive] = useState('All')
+
 
     const handleFilterCategory = (name) => {
         const new_array = data_projects.filter(project => project.category.includes(name))
         setProjects(new_array)
+        setActive(name)
     }
+
+    const project_variants = {
+        hidden: {
+            opacity: 0
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                delay: 0.2, duration: 0.6,
+            }
+        },
+        exit: {
+            opacity: 0,
+            transition: {
+                ease: 'easeInOut'
+            }
+        }
+    }
+
     return (
-        <div className="container projects">
+        <motion.div className="container projects"
+            variants={project_variants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+
+        >
+
             <div className="projects__navbar">
-                <div onClick={() => setProjects(data_projects)}>All</div>
-                <div onClick={() => handleFilterCategory('react')}>React</div>
-                <div onClick={() => handleFilterCategory('ecommerce')}>Ecommerce</div>
-                <div onClick={() => handleFilterCategory('hotel')}>Hotel</div>
-                <div onClick={() => handleFilterCategory('travel')}>Travel</div>
-                <div onClick={() => handleFilterCategory('entertainment')}>Entertainment</div>
-                <div onClick={() => handleFilterCategory('news')}>News</div>
+                <div className={active === 'All' && 'projects__navbar-active'} onClick={
+                    () => {
+                        setProjects(data_projects)
+                        setActive("All")
+
+                    }
+
+
+                }>All</div>
+                <div className={active === 'react' && 'projects__navbar-active'} onClick={() => handleFilterCategory('react')}>React</div>
+                <div className={active === 'ecommerce' && 'projects__navbar-active'} onClick={() => handleFilterCategory('ecommerce')}>Ecommerce</div>
+                <div className={active === 'hotel' && 'projects__navbar-active'} onClick={() => handleFilterCategory('hotel')}>Hotel</div>
+                <div className={active === 'travel' && 'projects__navbar-active'} onClick={() => handleFilterCategory('travel')}>Travel</div>
+                <div className={active === 'entertainment' && 'projects__navbar-active'} onClick={() => handleFilterCategory('entertainment')}>Entertainment</div>
+                <div className={active === 'news' && 'projects__navbar-active'} onClick={() => handleFilterCategory('news')}>News</div>
             </div>
+
             <div className="row">
 
                 {
                     projects.map(project =>
                         <ProjectCard key={project.name} project={project} />)
                 }
+
             </div>
-        </div>
+        </motion.div>
     );
 };
 

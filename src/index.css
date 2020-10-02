@@ -10,7 +10,7 @@ color:#354538;
     padding-top: 10px;
 }
 .app__row{
-    height:90vh;
+    height:90vh ;
 }
 
 .app__main-content{
@@ -18,6 +18,20 @@ color:#354538;
     border-radius: 20px;
     padding:25px 15px;
     box-shadow: 0 0 10px black;
+}
+@media (max-width: 600px) {
+    .app__main-content {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .navbar__active {
+        font-size: 1.5rem;
+    }
+
+    .navbar__item {
+        font-size: 1rem;
+    }
 }
 
 
