@@ -39,7 +39,7 @@ const About = () => {
         <h6 className="about__heading">My Speciality</h6>
         <div className="row">
           {skills.map((skill) => (
-            <SkillCard skill={skill} />
+            <SkillCard skill={skill} key={skill.title}/>
           ))}
         </div>
       </div>

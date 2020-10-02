@@ -64,7 +64,7 @@ const Resume = () => {
                    <div className="resume-language__body mt-3">
                        {
                            languages.map(language=>
-                            <Bar give={language}/>)
+                            <Bar give={language} key={language.name}/>)
                        }
                    </div>
                </div>
@@ -75,7 +75,7 @@ const Resume = () => {
                    <div className="resume-language__body mt-3">
                        {
                            styling.map(sty=>
-                            <Bar give={sty}/>)
+                            <Bar give={sty} key={sty.name}/>)
                        }
                    </div>
                </div>

@@ -7,7 +7,9 @@ import pizza from '../../assets/projects_images/Pizza.png'
 import travel from '../../assets/projects_images/Travel.png'
 import netflix from '../../assets/projects_images/Netflix.png'
 import voicenews from '../../assets/projects_images/VoiceNews.png'
-
+import phone from "../../assets/projects_images/Phone.png"
+import instagram from "../../assets/projects_images/Instagram.png"
+import breaking from "../../assets/projects_images/Breakingbad.png"
 const data_projects = [
     {
         name: 'COVID 19 tracker',
@@ -79,6 +81,27 @@ const data_projects = [
         deployed_url: 'https://react-news-paras.netlify.app/',
         github_url: 'https://github.com/Parasbuda/react-news-application',
         category: ['react','news']
+    },
+    {
+        name: 'Phone World',
+        image: phone,
+        deployed_url: 'https://phone-paras.netlify.app/',
+        github_url: 'https://github.com/Parasbuda/Ecommerce',
+        category: ['react','ecommerce']
+    },
+    {
+        name: 'Instagram Clone',
+        image: instagram,
+        deployed_url: 'https://react-instagram-paras.netlify.app/',
+        github_url: 'https://github.com/Parasbuda/Instagram-Clone',
+        category: ['react']
+    },
+    {
+        name: 'The Breaking Bad',
+        image: breaking,
+        deployed_url: 'https://breaking-bad-paras.netlify.app/',
+        github_url: 'https://github.com/Parasbuda/API-practice',
+        category: ['react']
     }
 ]
 

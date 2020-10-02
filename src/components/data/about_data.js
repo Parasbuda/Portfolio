@@ -1,4 +1,3 @@
-import React from "react"
 import api from "../../assets/icons/api.svg";
 import computer from "../../assets/icons/computer.svg";
 import repair from "../../assets/icons/repair.svg";
